@@ -20,6 +20,7 @@ myShipAttack(target) {
         }
     } else {
         console.log(`you missed!`);
+        alert("You Missed!")
     }
 }
 
@@ -45,16 +46,16 @@ myShipAttack(target) {
  }
 
       let myShip = new shipS(20,5,0.7)
-      let ship1 = new shipS(3,2,0.6)
-      let ship2 = new shipS(3,2,0.6)
-      let ship3 = new shipS(4,3,0.7)
-      let ship4 = new shipS(4,3,0.7)
-      let ship5 = new shipS(5,4,0.8)
-      let ship6 = new shipS(6,4,0.8)
+      let ship1 = new shipS(0,2,0.6)
+      let ship2 = new shipS(0,2,0.6)
+      let ship3 = new shipS(0,3,0.7)
+      let ship4 = new shipS(0,3,0.7)
+      let ship5 = new shipS(0,4,0.8)
+      let ship6 = new shipS(0,4,0.8)
     
 
       
-      const battle = () => {
+      const battle = (player,target) => {
          
         start1 = prompt("Are you ready to start game", "yes or no")
         while (ship1.isAlive && myShip.isAlive && "yes" == start1) {
@@ -94,77 +95,83 @@ if ("yes" != start1 || myShip.isAlive == false) {
 
  input2 = prompt("Ship 2 is Dead", "attack or retreat");
 
- while (ship3.isAlive && myShip.isAlive && ship3.isAlive == false && input2 == "attack") {
-               myShip.myShipAttack(ship3)
-       
-      if (ship3.isAlive == false && input2 == "attack") {
-       alert("Ship 3 is Dead")
-              
-            }
-       if (ship3.isAlive && input2 == "attack") {
-        ship3.attack(player);
-        }
+ while (ship3.isAlive && myShip.isAlive && ship2.isAlive == false && input2 == "attack") {
+  myShip.myShipAttack(ship3)
+
+ 
+if (ship3.isAlive == false && input2 == "attack") {
+alert("Ship 3 is Dead")
+ 
+}
+if (ship3.isAlive && input2 == "attack") {
+ship3.attack(player);
+}
 }
 if (input2 != "attack"|| myShip.isAlive == false){
- console.log("Game Over")
- alert("You're Dead, Game Over")
- return;
+console.log("Game Over");
+alert("You're Dead, Game Over");
+return;
 }
+
+input3 = prompt("Ship 3 is Dead", "attack or retreat");
+
+while (ship4.isAlive && myShip.isAlive && ship3.isAlive == false && input3 == "attack") {
+  myShip.myShipAttack(ship4)
+
  
-input3 = prompt("Ship 3 is Dead", "attack or retreat")
- while (ship4.isAlive && myShip.isAlive && ship4.isAlive == false && input3 == "attack") {
-               myShip.myShipAttack(ship4)
-       
-              
-       if (ship4.isAlive == false && input3 == "attack") {
-       alert("Ship 4 is Dead")
-              
-            }
-       if (ship4.isAlive && input3 == "attack") {
-        ship4.attack(player);
-        }
+if (ship4.isAlive == false && input3 == "attack") {
+alert("Ship 4 is Dead")
+ 
+}
+if (ship4.isAlive && input3 == "attack") {
+ship4.attack(player);
+}
 }
 if (input3 != "attack"|| myShip.isAlive == false){
- console.log("Game Over");
- alert("You're Dead, Game Over");
- return;
+console.log("Game Over");
+alert("You're Dead, Game Over");
+return;
 }
 
-input4 = prompt("Ship 4 is Dead", "attack or retreat")
- while (ship5.isAlive && myShip.isAlive && ship5.isAlive == false && input4 == "attack") {
-               myShip.myShipAttack(ship5)
-       
-              
-       if (ship5.isAlive == false && input4 == "attack") {
-       alert("Ship 5 is Dead")
-              
-            }
-       if (ship5.isAlive && input4 == "attack") {
-        ship5.attack(player);
-        }
+input4 = prompt("Ship 4 is Dead", "attack or retreat");
+
+while (ship5.isAlive && myShip.isAlive && ship4.isAlive == false && input4 == "attack") {
+  myShip.myShipAttack(ship5)
+
+ 
+if (ship5.isAlive == false && input4 == "attack") {
+alert("Ship 5 is Dead")
+ 
+}
+if (ship5.isAlive && input4 == "attack") {
+ship5.attack(player);
+}
 }
 if (input4 != "attack"|| myShip.isAlive == false){
- console.log("Game Over");
- alert("You're Dead, Game Over");
- return;
+console.log("Game Over");
+alert("You're Dead, Game Over");
+return;
 }
 
-input5 = prompt("Ship 5 is Dead", "attack or retreat")
- while (ship6.isAlive && myShip.isAlive && ship6.isAlive == false && input5 == "attack") {
-               myShip.myShipAttack(ship6)
-       
-       if (ship6.isAlive == false && input5 == "attack") {
-         alert("Ship 6, is Dead! You Win!");
-       }
-       if (ship6.isAlive && input5 == "attack") {
-        ship6.attack(player);
-        }
-  }
+input5 = prompt("Ship 5 is Dead", "attack or retreat");
+
+while (ship6.isAlive && myShip.isAlive && ship5.isAlive == false && input5 == "attack") {
+  myShip.myShipAttack(ship6)
+
+ 
+if (ship6.isAlive == false && input5 == "attack") {
+alert("Ship 6 is Dead, You WIN!")
+return;
+}
+if (ship6.isAlive && input5 == "attack") {
+ship5.attack(player);
+}
+}
 if (input5 != "attack"|| myShip.isAlive == false){
- console.log("Game Over");
- alert("You're Dead, Game Over");
- return;
-}  
+console.log("Game Over");
+alert("You're Dead, Game Over");
+return;
+} 
       }
 
                             
